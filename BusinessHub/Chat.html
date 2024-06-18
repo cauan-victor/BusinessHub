@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Chat.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqt.g@DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title> Chat - BusinessHub</title>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <div class="nav-left">
+                <div class="logo">
+                    <img src="foto.jpg" alt="BusinessHub Logo" class="profile-pic">
+                </div>
+                <div class="search-box" onmouseover="showSavedSearches()" onmouseout="hideSavedSearches()">
+                    <input type="text" id="searchInput" placeholder="Search BusinessHub" aria-label="Search BusinessHub">
+                    <i class="fa-solid fa-magnifying-glass" onclick="search()"></i>
+                    <div id="savedSearchesContainer" class="saved-searches"></div>
+                </div>
+            </div>
+            <div class="nav-center">
+                <a href="BusinessHub.html"><i class="fa-solid fa-house"></i></a>
+                <a href="Contratos.html"><i class="fa-solid fa-file-contract"></i></a>
+                <a href="Chat.html"><i class="fa-solid fa-comments"></i></a>
+                <a href="Parcerias.html"><i class="fa-solid fa-handshake"></i></a>
+                <a href="Perfil.html"><i class="fa-solid fa-user"></i></a>
+            </div>
+            <div class="nav-right">
+                <i class="fa-solid fa-bars"></i>
+                <i class="fa-brands fa-facebook-messenger"></i>
+                <i class="fa-solid fa-bell"></i>
+                <img src="images/profile-pic.jpg" alt="Profile Picture" class="profile-pic" onclick="toggleCardMenu()">
+                <div class="card-menu-wrap" id="cardwrap">
+                    <div class="card-menu">
+                        <div class="profile-menu">
+                            <img src="images/profile-pic.jpg" alt="Foto de perfil" class="profile-pic">
+                            <p>Web Coding</p>
+                        </div>
+                    </div>
+                    <a href="support.html" class="card-menu-items">
+                        <i class="fas fa-question-circle"></i>
+                        <p>Ajuda e Suporte</p>
+                        <span>></span>
+                    </a>
+                    <a href="display-acessibilidade.html" class="card-menu-items">
+                        <i class="fas fa-cog"></i>
+                        <p>Display e Acessibilidade</p>
+                        <span>></span>
+                    </a>
+                    <a href="Feedback.html" class="card-menu-items">
+                        <i class="fas fa-comment-dots"></i>
+                        <p>Dar Feedback</p>
+                        <span>></span>
+                    </a>
+                    <a href="#" class="card-menu-items" onclick="logout()">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <p>Sair</p>
+                        <span>></span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+        <main>
+            <div class="chat-container">
+                <aside class="contact-list">
+                    <div class="contact-item" onclick="openChat('Company A')">
+                        <img src="images/company-a.jpg" alt="Company A">
+                        <div class="contact-info">
+                            <h3>Company A</h3>
+                            <p>Last message preview...</p>
+                        </div>
+                    </div>
+                    <div class="contact-item" onclick="openChat('Company B')">
+                        <img src="images/company-b.jpg" alt="Company B">
+                        <div class="contact-info">
+                            <h3>Company B</h3>
+                            <p>Last message preview...</p>
+                        </div>
+                    </div>
+                </aside>
+                <section class="chat-window">
+                    <header class="chat-header" id="chat-header">Select a chat to start messaging</header>
+                    <div class="chat-messages" id="chat-messages"></div>
+                    <div class="chat-input">
+                        <input type="text" id="message-input" placeholder="Type a message...">
+                        <button onclick="sendMessage()"><i class="fa-solid fa-paper-plane"></i></button>
+                    </div>
+                </section>
+            </div>
+            <div id="editModal" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal()">&times;</span>
+                    <input type="text" id="edit-message-input">
+                    <button onclick="saveEditedMessage()">Save</button>
+                    <button onclick="confirmDeleteMessage()">Delete</button>
+                </div>
+            </div>
+        </main>
+        
+    </div>
+    <script src="Chat.js"></script>
+</body>
+</html>

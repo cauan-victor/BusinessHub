@@ -1,0 +1,129 @@
+/* Estilo global para redefinir margens, paddings e utilizar a fonte Poppins */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+/* Estilo do corpo da página */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url(login.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+/* Estilo do contêiner principal */
+.wrapper {
+    width: 420px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+    color: #fff;
+    border-radius: 10px;
+    padding: 30px 40px;
+}
+
+/* Estilo do título dentro do contêiner */
+.wrapper h1 {
+    font-size: 36px;
+    text-align: center;
+}
+
+/* Estilo do contêiner de entrada de dados */
+.wrapper .input-box {
+    width: 100%;
+    height: 50px;
+    margin: 30px 0;
+    position: relative;
+}
+
+/* Estilo do campo de entrada de dados */
+.input-box input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 40px;
+    font-size: 16px;
+    color: #fff;
+    padding: 20px 45px 20px 20px;
+}
+
+/* Estilo do texto de espaço reservado no campo de entrada de dados */
+.input-box input::placeholder {
+    color: #fff;
+}
+
+/* Estilo do ícone dentro do campo de entrada de dados */
+.input-box i {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+}
+
+/* Estilo do contêiner para lembrar e esquecer informações */
+.wrapper .remember-forgot {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14.5px;
+    margin: -15px 0 15px;
+}
+
+/* Estilo do input dentro do contêiner de lembrar/esquecer */
+.remember-forgot label input {
+    color: #fff;
+    margin-right: 3px;
+}
+
+/* Estilo do link dentro do contêiner de lembrar/esquecer */
+.remember-forgot a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Efeito de sublinhado no link ao passar o mouse */
+.remember-forgot a:hover {
+    text-decoration: underline;
+}
+
+/* Estilo do botão dentro do contêiner principal */
+.wrapper .btn {
+    width: 100%;
+    height: 45px;
+    background-color: #fff;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+    cursor: pointer;
+    font-weight: 600;
+}
+
+/* Estilo do link de redirecionamento dentro do contêiner principal */
+.wrapper .register-link {
+    font-size: 14.5px;
+    text-align: center;
+    margin: 20px 0 15px;
+}
+
+/* Estilo do link de registro */
+.register-link p a {
+    color: #fff;
+    text-align: center;
+    font-weight: 600;
+}
+
+/* Efeito de sublinhado no link de registro ao passar o mouse */
+.register-link p a:hover {
+    text-decoration: underline;
+}

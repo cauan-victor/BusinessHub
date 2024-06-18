@@ -1,0 +1,387 @@
+/* Resetando margem e padding de todos os elementos e definindo box-sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos do corpo do documento */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #efefef; /* Cor de fundo padrão */
+    color: #252525; /* Cor do texto padrão */
+    transition: background-color 0.3s, color 0.3s; /* Transição suave para mudança de tema */
+}
+
+/* Modo escuro para o corpo */
+body.dark-theme {
+    background-color: #252525; /* Cor de fundo no modo escuro */
+    color: #efefef; /* Cor do texto no modo escuro */
+}
+
+/* Modo escuro para configurações de acessibilidade */
+body.dark-theme .accessibility-settings {
+    background-color: #333;
+    color: #efefef;
+}
+
+/* Modo escuro para seções específicas */
+body.dark-theme .saved-searches,
+body.dark-theme nav,
+body.dark-theme .card-menu-wrap {
+    background-color: #333;
+    color: #efefef;
+}
+
+/* Modo escuro para botões e seleções nas configurações de acessibilidade */
+body.dark-theme .accessibility-settings button,
+body.dark-theme .accessibility-settings select {
+    background-color: #444;
+    color: #efefef;
+}
+
+/* Modo de alto contraste */
+body.high-contrast {
+    background-color: #000;
+    color: #fff;
+}
+
+
+
+/*SÓ A PARTE DARK☝*/
+
+
+.saved-searches {
+    display: none;
+    position: absolute;
+    top: 45px;
+    left: 0;
+    width: 100%;
+    background: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    border-radius: 0 0 10px 10px;
+    z-index: 100;
+    max-height: 200px;
+    overflow-y: auto;
+    opacity: 0;
+    transition: opacity 5s;
+}
+
+.saved-searches.show {
+    display: block;
+    opacity: 1;
+}
+
+.search-item {
+    padding: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+}
+
+.search-item:hover {
+    background: #efefef;
+}
+
+.search-item p {
+    margin: 0;
+}
+
+.search-item .actions {
+    display: flex;
+    gap: 10px;
+}
+
+.search-item .edit,
+.search-item .delete {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #252525;
+}
+
+.search-item .edit:hover {
+    color: #4caf50;
+}
+
+.search-item .delete:hover {
+    color: #ff4d4d;
+}
+
+
+nav {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    margin-left: 16px;
+}
+
+.nav-left .logo img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.nav-left .search-box {
+    width: 230px;
+    height: 40px;
+    background: #efefef;
+    border-radius: 20px;
+    margin-left: 8px;
+    padding: 0 8px;
+    display: flex;
+    align-items: center;
+}
+
+.nav-left .search-box i {
+    margin-right: 8px;
+    color: #646262;
+}
+
+.nav-left .search-box input {
+    border: none;
+    background: none;
+    outline: none;
+    width: 100%;
+    color: #252525;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.nav-center {
+    display: flex;
+    align-items: center;
+}
+
+.nav-center a {
+    margin: 0 12px;
+    text-decoration: none;
+}
+
+.nav-center i {
+    font-size: 22px;
+    color: #646262;
+    padding: 13px;
+    border-radius: 10px;
+}
+
+.nav-center a:hover i {
+    background: #efefef;
+    color: #252525;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    margin-right: 16px;
+}
+
+.nav-right img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.nav-right i {
+    background: #efefef6e;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    margin-left: 8px;
+    font-size: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-right i:hover {
+    background: #000000;
+}
+
+/* Parte 2: Código do menu suspenso começa aqui */
+
+.card-menu-wrap {
+    display: none; /* Change from absolute positioning to display none for simplicity */
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    width: 330px;
+    background: #fff;
+    border-radius: 7px;
+    padding: 14px;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+
+.card-menu {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #dadada;
+    padding-bottom: 14px;
+}
+
+.card-menu img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 14px;
+}
+
+.card-menu p {
+    color: #65676b;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.card-menu-items {
+    display: flex;
+    align-items: center;
+    margin: 14px 0;
+    text-decoration: none;
+    color: #65676b;
+}
+
+.card-menu-items img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 14px;
+}
+
+.card-menu-items p {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.card-menu-items span {
+    margin-left: auto;
+    color: #65676b;
+}
+
+
+
+
+
+
+
+
+
+/* Main Content Styles */
+.support-section {
+    margin: 80px auto;
+    width: 90%;
+    max-width: 1200px;
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+
+.support-section h1 {
+    color: #000;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.support-section h2 {
+    font-size: 24px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: #000;
+}
+
+.support-section p, .support-section ul {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #444;
+    margin-bottom: 10px;
+}
+
+.support-section ul {
+    padding-left: 20px;
+}
+
+.support-section ul li {
+    margin-bottom: 5px;
+}
+
+/* Form Styles */
+form .form-group {
+    margin-bottom: 15px;
+}
+
+form .form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+form .form-group input,
+form .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+form .form-group input:focus,
+form .form-group textarea:focus {
+    border-color: #555;
+}
+
+form button {
+    padding: 10px 20px;
+    border: none;
+    background: #007bff;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background: #0056b3;
+}
+
+form button#delete-account {
+    background: #dc3545;
+}
+
+form button#delete-account:hover {
+    background: #b52a3a;
+}
